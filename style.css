@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+:root {
+  --ff-body: "Manrope", sans-serif;
+  --clr-dark: hsl(227 35% 25%);
+  --clr-text-light: hsl(225 20% 60%);
+  --clr-button-text: hsl(226 100% 87%);
+  --clr-white: hsl(0 0% 100%);
+  --clr-discount-bg: hsl(14 92% 95%);
+  --clr-discount-text: hsl(15 100% 70%);
+  --clr-toggle-bg: hsl(223 50% 87%);
+  --clr-accent-soft: hsl(174 77% 80%);
+  --clr-accent-strong: hsl(174 86% 45%);
+  --clr-empty-slider-bar: hsl(224 65% 95%);
+}
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+  font-family: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--ff-body);
+}
+
+.card {
+  width: min(100%, 31.25rem);
+  margin-inline: auto;
+  -webkit-box-shadow: 0 15px 20px 1px hsla(0deg, 0%, 0%, 0.1);
+          box-shadow: 0 15px 20px 1px hsla(0deg, 0%, 0%, 0.1);
+  border-radius: 0.5rem;
+  padding: 0 1.875rem 2.25rem;
+  color: var(--clr-text-light);
+}
+@media (max-width: 35em) {
+  .card {
+    padding: 0 2.75rem 2.25rem;
+  }
+}
+
+.card__header {
+  text-align: center;
+  position: relative;
+  margin-block: 6.875rem 8.75rem;
+}
+@media (max-width: 35em) {
+  .card__header {
+    margin-block: 6rem 5.75rem;
+  }
+}
+.card__header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+}
+.card__header h1 {
+  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 1.07rem + 0.75vw, 1.75rem);
+  font-weight: 800;
+  color: var(--clr-dark);
+  -webkit-margin-after: 0.875rem;
+          margin-block-end: 0.875rem;
+}
+.card__header p {
+  font-size: 0.9375rem;
+}
+@media (max-width: 35em) {
+  .card__header p {
+    width: 22ch;
+    margin-inline: auto;
+  }
+}
+
+.card__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+@media (max-width: 35em) {
+  .card__grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    -webkit-margin-after: 3rem;
+            margin-block-end: 3rem;
+  }
+}
+.card .pageviews {
+  grid-column: 1/2;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+@media (max-width: 35em) {
+  .card .pageviews {
+    grid-column: 1/-1;
+  }
+}
+.card .price {
+  grid-column: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+@media (max-width: 35em) {
+  .card .price {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+}
+.card .price__fullprice {
+  font-size: 0.625rem;
+  -webkit-margin-end: 0.5rem;
+          margin-inline-end: 0.5rem;
+  background-color: var(--clr-discount-bg);
+  color: var(--clr-discount-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100vw;
+  font-weight: 800;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.card .price__number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 0.5;
+  -webkit-margin-end: 0.25rem;
+          margin-inline-end: 0.25rem;
+  color: var(--clr-dark);
+}
+@media (max-width: 35em) {
+  .card .price__number {
+    font-size: 2rem;
+  }
+}
+.card .range-slider {
+  grid-column: 1/-1;
+  margin-block: 2.5rem;
+  width: 100%;
+}
+@media (max-width: 35em) {
+  .card .range-slider {
+    margin-block: 2rem 3rem;
+  }
+}
+.card__toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  position: relative;
+}
+.card__toggle #yearly::after {
+  content: "25% discount";
+  position: absolute;
+  font-size: 0.625rem;
+  font-weight: 800;
+  -webkit-margin-start: 0.5rem;
+          margin-inline-start: 0.5rem;
+  background-color: var(--clr-discount-bg);
+  color: var(--clr-discount-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100vw;
+}
+@media (max-width: 35em) {
+  .card__toggle #yearly::after {
+    content: "-25%";
+  }
+}
+.card .toggle-wrapper {
+  --toggle-height: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.card .toggle {
+  position: relative;
+  display: inline-block;
+  height: var(--toggle-height);
+  aspect-ratio: 16/9;
+}
+.card .toggle input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.card .toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--clr-toggle-bg);
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-inline: calc(var(--toggle-height) * 0.15);
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+}
+.card .toggle .slider:hover {
+  background-color: var(--clr-accent-strong);
+}
+.card .toggle .slider:focus-visible {
+  outline: 2px solid hsl(174deg, 77%, 40%);
+  outline-offset: 0.15rem;
+}
+.card .toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: calc(var(--toggle-height) * 0.7);
+  aspect-ratio: 1;
+  background-color: white;
+}
+.card .toggle input:checked + .slider {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.card .toggle .slider.round {
+  border-radius: 100vw;
+}
+.card .toggle .slider.round:before {
+  border-radius: 50%;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--clr-accent-soft)), color-stop(50%, var(--clr-empty-slider-bar)));
+  background: linear-gradient(90deg, var(--clr-accent-soft) 50%, var(--clr-empty-slider-bar) 50%);
+  cursor: -webkit-grab;
+  cursor: grab;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 100vw;
+}
+
+input[type=range]:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* Removes default focus */
+input[type=range]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -1rem; /* Centers thumb on the track */
+  background-image: url(./images/icon-slider.svg), -webkit-gradient(linear, left top, left bottom, from(var(--clr-accent-strong)), to(var(--clr-accent-strong)));
+  background-image: url(./images/icon-slider.svg), linear-gradient(var(--clr-accent-strong), var(--clr-accent-strong));
+  background-size: 1.35rem, 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  -webkit-box-shadow: 0 1rem 1rem hsla(174deg, 86%, 45%, 0.4);
+          box-shadow: 0 1rem 1rem hsla(174deg, 86%, 45%, 0.4);
+}
+
+input[type=range]:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--clr-accent-strong);
+  outline-offset: 0.125rem;
+}
+
+input[type=range]:active::-webkit-slider-thumb {
+  background-image: url(./images/icon-slider.svg), -webkit-gradient(linear, left top, left bottom, from(hsl(174deg, 77%, 40%)), to(hsl(174deg, 77%, 40%)));
+  background-image: url(./images/icon-slider.svg), linear-gradient(hsl(174deg, 77%, 40%), hsl(174deg, 77%, 40%));
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type=range]::-moz-range-track {
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type=range]::-moz-range-thumb {
+  background-image: url(./images/icon-slider.svg), linear-gradient(var(--clr-accent-strong), var(--clr-accent-strong));
+  background-size: 1.35rem, 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  box-shadow: 0 1rem 1rem hsla(174deg, 86%, 45%, 0.4);
+}
+
+input[type=range]:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--clr-accent-strong);
+  outline-offset: 0.125rem;
+}
+
+input[type=range]:active::-moz-range-thumb {
+  background-image: url(./images/icon-slider.svg), linear-gradient(hsl(174deg, 77%, 40%), hsl(174deg, 77%, 40%));
+}
+
+.card footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-margin-before: 4rem;
+          margin-block-start: 4rem;
+  font-size: 0.8125rem;
+}
+@media (max-width: 35em) {
+  .card footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin-block: 4rem 6rem;
+  }
+}
+.card footer li:not(:last-child) {
+  -webkit-margin-after: 0.625rem;
+          margin-block-end: 0.625rem;
+}
+.card footer li::before {
+  content: url(./images/icon-check.svg);
+  -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+}
+.card footer button {
+  background-color: var(--clr-dark);
+  border: none;
+  border-radius: 100vw;
+  padding: 0.6rem 2.5rem;
+  color: var(--clr-button-text);
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+@media (max-width: 35em) {
+  .card footer button {
+    -webkit-margin-before: 2.25rem;
+            margin-block-start: 2.25rem;
+  }
+}
+.card footer button:hover {
+  color: var(--clr-white);
+}/*# sourceMappingURL=style.css.map */
