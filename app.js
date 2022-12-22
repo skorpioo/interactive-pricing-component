@@ -39,7 +39,11 @@ rangeSlider.oninput = function () {
 };
 rangeSlider.oninput();
 
-rangeSlider.addEventListener("mousemove", function () {
+function addListenerMulti(el, s, fn) {
+	s.split(" ").forEach(e => el.addEventListener(e, fn, false));
+}
+
+addListenerMulti(rangeSlider, "change mousemove", function () {
 	var x = rangeSlider.value * 25;
 	var color =
 		"linear-gradient(90deg, var(--clr-accent-soft)" + x + "%, var(--clr-empty-slider-bar)" + x + "%)";
